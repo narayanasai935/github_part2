@@ -1,0 +1,25 @@
+import calendar
+
+def display_month_calendar():
+    """
+    Prompts the user for a year and month and displays the calendar for that month.
+    """
+    try:
+        year = int(input("Enter the year (e.g., 2024): "))
+        month = int(input("Enter the month (1-12, e.g., 1 for January): "))
+
+        if not (1 <= month <= 12):
+            print("Invalid month. Please enter a number between 1 and 12.")
+            return
+
+        # Display the calendar for the specified month
+        print(f"\nCalendar for {calendar.month_name[month]} {year}:\n")
+        print(calendar.month(year, month))
+
+    except ValueError:
+        print("Invalid input. Please enter numeric values for year and month.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    display_month_calendar()
